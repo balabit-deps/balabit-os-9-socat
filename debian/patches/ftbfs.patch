@@ -1,0 +1,17 @@
+Description: Fix socat ftbfs, port is in use.
+Author: Dimitri John Ledkov <xnox@ubuntu.com>
+
+
+--- socat-1.7.4.1.orig/test.sh
++++ socat-1.7.4.1/test.sh
+@@ -12333,6 +12333,10 @@ PORT=$((PORT+1))
+ N=$((N+1))
+ 
+ 
++while ! waittcp4port $PORT 0; do
++    PORT=$((PORT+1))
++done
++
+ # OPENSSL-CONNECT with bind option failed on some systems (eg.FreeBSD, but not
+ # Linux) with "Invalid argument".
+ NAME=OPENSSL_CONNECT_BIND
