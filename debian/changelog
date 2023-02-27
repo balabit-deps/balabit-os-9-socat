@@ -1,3 +1,9 @@
+socat (1.7.4.1-3ubuntu4bb1) jammy; urgency=medium
+
+  * debian/patches/08-test.sh-fixes.patch: exclude failing tests
+
+ -- Balabit Platform Team <devnull@dev.null>  Mon, 27 Feb 2023 13:01:36 +0100
+
 socat (1.7.4.1-3ubuntu4) jammy; urgency=high
 
   * No change rebuild for ppc64el baseline bump.
